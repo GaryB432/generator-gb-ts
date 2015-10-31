@@ -1,0 +1,39 @@
+{
+  "name": "homer",
+  "version": "3.4.0",
+  "description": "Where are you",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "geodesy": "^1.0.2"
+  },
+  "devDependencies": {
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-tslint": "^3.3.1",
+    "morgan": "^1.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GaryB432/homer-ng.git"
+  },
+  "keywords": [
+    "geo",
+    "typescript",
+    "angular"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GaryB432/homer-ng/issues"
+  },
+  "homepage": "https://github.com/GaryB432/homer-ng#readme"
+}
