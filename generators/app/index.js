@@ -18,12 +18,6 @@ module.exports = yeoman.generators.Base.extend({
 
     var prompts = [
       {
-        type: 'confirm',
-        name: 'someOption',
-        message: 'Would you like to enable this option?',
-        default: true
-      },
-      {
         name: "namespace",
         message: "What namepace should be used for internal modules?",
         default: Case.pascal(this.cwd)
@@ -63,6 +57,11 @@ module.exports = yeoman.generators.Base.extend({
       this.fs.copyTpl(this.templatePath("_package.json"), this.destinationPath("package.json"), this.tplContext);
       this.fs.copyTpl(this.templatePath("README.md"), this.destinationPath("README.md"), this.tplContext);
       this.fs.copyTpl(this.templatePath("server.js"), this.destinationPath("server.js"), this.tplContext);
+      this.fs.copyTpl(this.templatePath("tsd.json"), this.destinationPath("tsd.json"), this.tplContext);
+      this.fs.copyTpl(this.templatePath("tslint.json"), this.destinationPath("tslint.json"), this.tplContext);
+    },
+    
+    source: function(){
       this.fs.copyTpl(this.templatePath("source/jade/index.jade"), this.destinationPath("source/jade/index.jade"), this.tplContext);
       this.fs.copyTpl(this.templatePath("source/jade/templates/directives/thing.jade"), this.destinationPath("source/jade/templates/directives/thing.jade"), this.tplContext);
       this.fs.copyTpl(this.templatePath("source/jade/templates/states/about.jade"), this.destinationPath("source/jade/templates/states/about.jade"), this.tplContext);
@@ -84,12 +83,10 @@ module.exports = yeoman.generators.Base.extend({
       this.fs.copyTpl(this.templatePath("source/sass/states/main.scss"), this.destinationPath("source/sass/states/main.scss"), this.tplContext);
       this.fs.copyTpl(this.templatePath("source/sass/style.scss"), this.destinationPath("source/sass/style.scss"), this.tplContext);
       this.fs.copyTpl(this.templatePath("source/tsconfig.json"), this.destinationPath("source/tsconfig.json"), this.tplContext);
-      this.fs.copyTpl(this.templatePath("test/SpecRunner.html"), this.destinationPath("test/SpecRunner.html"), this.tplContext);
-      this.fs.copyTpl(this.templatePath("tsd.json"), this.destinationPath("tsd.json"), this.tplContext);
-      this.fs.copyTpl(this.templatePath("tslint.json"), this.destinationPath("tslint.json"), this.tplContext);
     },
 
     tests: function () {
+      this.fs.copyTpl(this.templatePath("test/SpecRunner.html"), this.destinationPath("test/SpecRunner.html"), this.tplContext);
       this.fs.copyTpl(this.templatePath("test/specs.js"), this.destinationPath("test/specs.js"), this.tplContext);
       this.fs.copyTpl(this.templatePath("test/specs/main.ts"), this.destinationPath("test/specs/main.ts"), this.tplContext);
       this.fs.copyTpl(this.templatePath("test/tsconfig.json"), this.destinationPath("test/tsconfig.json"), this.tplContext);
@@ -97,7 +94,7 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   install: function () {
-    //this.spawnCommand('tsd', ['reinstall', '--overwrite', '--save']);
-    //this.installDependencies();
+    this.spawnCommand('tsd', ['reinstall', '--overwrite', '--save']);
+    this.installDependencies();
   }
 });

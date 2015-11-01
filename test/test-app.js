@@ -9,7 +9,7 @@ describe('gb-ts:app', function () {
   before(function (done) {
     helpers.run(path.join(__dirname, '../generators/app'))
       .withOptions({ skipInstall: true })
-      .withPrompts({ someOption: true })
+      .withPrompts({ namespace: "MyNamespace", packageName: "pkg-name" })
       .on('end', done);
   });
 
