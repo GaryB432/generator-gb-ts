@@ -21,6 +21,37 @@ describe('gb-ts:app', function () {
       'README.md',
       'server.js',
       'source/jade/index.jade',
+      'source/js/app.ts',
+      'source/sass/generals.scss',
+      'source/sass/reset.scss',
+      'source/sass/style.scss',
+      'source/tsconfig.json',
+      'test/SpecRunner.html',
+      'test/specs.js',
+      'test/specs/main.ts',
+      'test/tsconfig.json',
+      'tsd.json',
+      'tslint.json'
+    ]);
+  });
+});
+
+describe('gb-ts:angular', function () {
+  before(function (done) {
+    helpers.run(path.join(__dirname, '../generators/angular'))
+      .withOptions({ skipInstall: true })
+      .withPrompts({ namespace: "MyNamespace", packageName: "pkg-name" })
+      .on('end', done);
+  });
+
+  it('creates files', function () {
+    assert.file([
+      'bower.json',
+      'gulpfile.js',
+      'package.json',
+      'README.md',
+      'server.js',
+      'source/jade/index.jade',
       'source/jade/templates/directives/thing.jade',
       'source/jade/templates/states/about.jade',
       'source/jade/templates/states/main.jade',
