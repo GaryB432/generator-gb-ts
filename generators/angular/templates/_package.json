@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "<%= pkg.name %>",
   "version": "<%= pkg.version %>",
   "dependencies": {},

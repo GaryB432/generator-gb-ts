@@ -1,10 +1,17 @@
 /// <reference path="../../typings/tsd.d.ts" />
 
-let App = angular.module("app", ["ngRoute", "ngTouch", "ngAnimate"]);
+class MathService {
+  add(a: number, b: number) {
+    return a + b;
+  }
+  doAdd(a: number, b: number): Promise<number> {
+    let d = Promise.defer<number>();
+    d.resolve(this.add(a, b));
+    return d.promise;
+  }
+}
 
-App.config(function($routeProvider: ng.route.IRouteProvider) {
-    $routeProvider
-        .when("/", { templateUrl: "templates/states/main.html", controller: "HomeCtrl", controllerAs: "vm" })
-        .when("/about", { templateUrl: "templates/states/about.html", controller: "AboutCtrl", controllerAs: "vm" })
-        .otherwise({ redirectTo: "/" });
-});
+document.addEventListener("DOMContentLoaded", () => new MathService().doAdd(3, 5).then((sum) => {
+  let p = document.getElementById("b1");
+  p.innerText = "The answer you seek is " + sum.toString();
+}), false);

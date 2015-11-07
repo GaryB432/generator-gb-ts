@@ -1,29 +1,22 @@
-'use strict';
+"use strict";
 
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var jade = require('gulp-jade');
-var sass = require('gulp-sass');
-var pkg = require('./package.json');
-var tslint = require('gulp-tslint');
+var gulp = require("gulp");
+var concat = require("gulp-concat");
+var jade = require("gulp-jade");
+var sass = require("gulp-sass");
+var pkg = require("./package.json");
+var tslint = require("gulp-tslint");
 
-gulp.task('scripts', function () {
+gulp.task("scripts", function () {
     return gulp.src([
-        'bower_components/angular/angular.js',
-        'bower_components/angular-touch/angular-touch.js',
-        'bower_components/angular-animate/angular-animate.js',
-        'bower_components/angular-resource/angular-resource.js',
-        'bower_components/angular-route/angular-route.js',
-        'bower_components/moment/moment.js',
-        'bower_components/angular-moment/angular-moment.js',
-        'node_modules/geodesy/dms.js'
+         "bower_components/bluebird/js/browser/bluebird.min.js"
     ])
-        .pipe(concat('lib.js'))
-        .pipe(gulp.dest('./app/js/'));
+        .pipe(concat("lib.js"))
+        .pipe(gulp.dest("./app/js/"));
 });
 
-gulp.task('templates', function () {
-    gulp.src('./source/jade/**/*.jade')
+gulp.task("templates", function () {
+    gulp.src("./source/jade/**/*.jade")
         .pipe(jade({
             data: {
                 debug: false,
@@ -32,35 +25,35 @@ gulp.task('templates', function () {
             },
             pretty: true
         }))
-        .pipe(gulp.dest('./app/'))
+        .pipe(gulp.dest("./app/"))
 });
 
-gulp.task('sass', function () {
-    gulp.src('./source/sass/style.scss')
-        .pipe(sass({ outputStyle: 'compact', outFile: 'style.css' })
-            .on('error', sass.logError))
-        .pipe(gulp.dest('./app/css/'));
+gulp.task("sass", function () {
+    gulp.src("./source/sass/style.scss")
+        .pipe(sass({ outputStyle: "compact", outFile: "style.css" })
+            .on("error", sass.logError))
+        .pipe(gulp.dest("./app/css/"));
 });
 
-gulp.task('tslint', function () {
-    return gulp.src('./source/**/*.ts')
+gulp.task("tslint", function () {
+    return gulp.src("./source/**/*.ts")
         .pipe(tslint())
-        .pipe(tslint.report('verbose', {
+        .pipe(tslint.report("verbose", {
             emitError: false
         }));
 });
 
-gulp.task('sass:watch', function () {
-    gulp.watch('./source/**/*.scss', ['sass']);
+gulp.task("sass:watch", function () {
+    gulp.watch("./source/**/*.scss", ["sass"]);
 });
 
-gulp.task('jade:watch', function () {
-    gulp.watch('./source/**/*.jade', ['templates']);
+gulp.task("jade:watch", function () {
+    gulp.watch("./source/**/*.jade", ["templates"]);
 });
 
-gulp.task('ts:watch', function () {
-    gulp.watch('./source/**/*.ts', ['tslint']);
+gulp.task("ts:watch", function () {
+    gulp.watch("./source/**/*.ts", ["tslint"]);
 });
 
-gulp.task('default', ['scripts', 'templates', 'sass']);
-gulp.task('watch', ['sass:watch', 'jade:watch', 'ts:watch']);
+gulp.task("default", ["scripts", "templates", "sass"]);
+gulp.task("watch", ["sass:watch", "jade:watch", "ts:watch"]);

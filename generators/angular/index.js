@@ -60,14 +60,27 @@ module.exports = yeoman.generators.Base.extend({
       this.fs.copyTpl(this.templatePath("tsd.json"), this.destinationPath("tsd.json"), this.tplContext);
       this.fs.copyTpl(this.templatePath("tslint.json"), this.destinationPath("tslint.json"), this.tplContext);
     },
-
-    source: function () {
-
+    
+    source: function(){
       this.fs.copyTpl(this.templatePath("source/jade/index.jade"), this.destinationPath("source/jade/index.jade"), this.tplContext);
+      this.fs.copyTpl(this.templatePath("source/jade/templates/directives/thing.jade"), this.destinationPath("source/jade/templates/directives/thing.jade"), this.tplContext);
+      this.fs.copyTpl(this.templatePath("source/jade/templates/states/about.jade"), this.destinationPath("source/jade/templates/states/about.jade"), this.tplContext);
+      this.fs.copyTpl(this.templatePath("source/jade/templates/states/main.jade"), this.destinationPath("source/jade/templates/states/main.jade"), this.tplContext);
       this.fs.copyTpl(this.templatePath("source/js/app.ts"), this.destinationPath("source/js/app.ts"), this.tplContext);
-      this.fs.copyTpl(this.templatePath("source/sass/app.scss"), this.destinationPath("source/sass/app.scss"), this.tplContext);
+      this.fs.copyTpl(this.templatePath("source/js/controllers/about.ts"), this.destinationPath("source/js/controllers/about.ts"), this.tplContext);
+      this.fs.copyTpl(this.templatePath("source/js/controllers/main.ts"), this.destinationPath("source/js/controllers/main.ts"), this.tplContext);
+      this.fs.copyTpl(this.templatePath("source/js/directives/thing.ts"), this.destinationPath("source/js/directives/thing.ts"), this.tplContext);
+      this.fs.copyTpl(this.templatePath("source/js/filters/distance.ts"), this.destinationPath("source/js/filters/distance.ts"), this.tplContext);
+      this.fs.copyTpl(this.templatePath("source/js/services/thing.ts"), this.destinationPath("source/js/services/thing.ts"), this.tplContext);
+      this.fs.copyTpl(this.templatePath("source/js/services/storage.ts"), this.destinationPath("source/js/services/storage.ts"), this.tplContext);
+      this.fs.copyTpl(this.templatePath("source/sass/directives.scss"), this.destinationPath("source/sass/directives.scss"), this.tplContext);
+      this.fs.copyTpl(this.templatePath("source/sass/directives/location.scss"), this.destinationPath("source/sass/directives/location.scss"), this.tplContext);
+      this.fs.copyTpl(this.templatePath("source/sass/directives/thing.scss"), this.destinationPath("source/sass/directives/thing.scss"), this.tplContext);
       this.fs.copyTpl(this.templatePath("source/sass/generals.scss"), this.destinationPath("source/sass/generals.scss"), this.tplContext);
       this.fs.copyTpl(this.templatePath("source/sass/reset.scss"), this.destinationPath("source/sass/reset.scss"), this.tplContext);
+      this.fs.copyTpl(this.templatePath("source/sass/states.scss"), this.destinationPath("source/sass/states.scss"), this.tplContext);
+      this.fs.copyTpl(this.templatePath("source/sass/states/about.scss"), this.destinationPath("source/sass/states/about.scss"), this.tplContext);
+      this.fs.copyTpl(this.templatePath("source/sass/states/main.scss"), this.destinationPath("source/sass/states/main.scss"), this.tplContext);
       this.fs.copyTpl(this.templatePath("source/sass/style.scss"), this.destinationPath("source/sass/style.scss"), this.tplContext);
       this.fs.copyTpl(this.templatePath("source/tsconfig.json"), this.destinationPath("source/tsconfig.json"), this.tplContext);
     },

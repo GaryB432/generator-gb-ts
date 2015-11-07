@@ -1,6 +1,6 @@
-# <%= ts.namespace %>Min
+# <%= ts.namespace %>
 Just a mashup of 
-[Bluebird](https://github.com/petkaantonov/bluebird/),
+[angular.js](http://angularjs.org),
  [TypeScript](http://typescriptlang.org),
  Jade
 
@@ -14,6 +14,9 @@ From the command line in your project directory
 - gulp
 
 From separate command windows
-- npm start
+- node server
 - gulp watch
-- tsc -p source -w
+
+From the same separate command window
+- cd source
+- tsc -w

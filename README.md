@@ -35,6 +35,10 @@ Finally, initiate the generator:
 yo gb-ts
 ```
 
+```bash
+yo gb-ts:angular
+```
+
 ### Getting To Know Yeoman
 
 Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.

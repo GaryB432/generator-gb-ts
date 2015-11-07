@@ -1,25 +1,26 @@
 /// <reference path="../../typings/tsd" />
 /// <reference path="../../app/js/main" />
 
-'use strict';
+"use strict";
 
-describe('Fun <%= ts.namespace %> Filter', function() {
-    let $filter: any, df: any;
+describe("<%= ts.namespace %>Min Math Service", () => {
 
-    beforeEach(function() {
-        module('app');
+    let ms: MathService;
 
-        inject(function(_$filter_: any) {
-            $filter = _$filter_;
-            df = $filter('funFilter');
+    beforeEach(() => {
+        ms = new MathService();
+    });
+
+    it("should compute meaning of life", () => {
+        expect(ms.add(20, 22)).toBe(42);
+    });
+});
+
+describe("<%= ts.namespace %>Min Math Service", () => {
+    it("Should add asynchronously", (done) => {
+        new MathService().doAdd(6, 7).then((sum) => {
+            expect(sum).toEqual(13);
+            done();
         });
-    });
-
-    it('exists', function() {
-        expect(df).not.toBeNull();
-    });
-
-    it('is total fun', function() {
-        expect(df(4)).toEqual(20);
     });
 });

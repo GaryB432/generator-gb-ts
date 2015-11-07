@@ -5,23 +5,11 @@
   "path": "typings",
   "bundle": "typings/tsd.d.ts",
   "installed": {
-    "angularjs/angular.d.ts": {
-      "commit": "3b0f362204ea965952dafdb682a5274d527ef9d0"
-    },
-    "googlemaps/google.maps.d.ts": {
-      "commit": "3b0f362204ea965952dafdb682a5274d527ef9d0"
-    },
-    "angularjs/angular-route.d.ts": {
-      "commit": "3b0f362204ea965952dafdb682a5274d527ef9d0"
-    },
-    "jquery/jquery.d.ts": {
-      "commit": "3b0f362204ea965952dafdb682a5274d527ef9d0"
-    },
     "jasmine/jasmine.d.ts": {
       "commit": "3b0f362204ea965952dafdb682a5274d527ef9d0"
     },
-    "angularjs/angular-mocks.d.ts": {
-      "commit": "3b0f362204ea965952dafdb682a5274d527ef9d0"
+    "bluebird/bluebird.d.ts": {
+      "commit": "421d6610bdb09e1015b71f5991d7a68d079eca21"
     }
   }
 }
