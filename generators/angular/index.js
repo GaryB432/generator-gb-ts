@@ -3,7 +3,7 @@ var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
 var path = require("path");
-var Case = require("Case");
+var Case = require("case");
 
 module.exports = yeoman.generators.Base.extend({
   initializing: function () {
@@ -94,7 +94,7 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   install: function () {
-    this.spawnCommand('tsd', ['reinstall', '--overwrite', '--save']);
+    // this.spawnCommand('tsd', ['reinstall', '--overwrite', '--save']);
     this.installDependencies();
   }
 });

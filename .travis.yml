@@ -2,7 +2,5 @@ language: node_js
 node_js:
   - "5.0.0"
   - "0.12"
-before_install:
-- npm install -g typescript@1.6.2
 script:
 - npm test
